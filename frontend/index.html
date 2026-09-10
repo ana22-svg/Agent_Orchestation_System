@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relay — Agent orchestration control room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="functional.css" />
+  <link rel="stylesheet" href="evidence.css" />
+  <link rel="stylesheet" href="controls.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">↗</span><span>relay</span></div>
+      <div class="workspace-switcher"><span class="workspace-dot"></span><span>Northstar lab</span><span class="chevron">⌄</span></div>
+      <nav>
+        <p class="nav-label">Workspace</p>
+        <button class="nav-item active"><span>◈</span> Demo run <b>LIVE</b></button>
+        <button class="nav-item" id="approvalNav"><span>◌</span> Human approval <b class="alert-count">01</b></button>
+      </nav>
+      <div class="sidebar-footer"><span class="workspace-dot"></span><span><strong>Local demo mode</strong><small>Authentication minimized</small></span></div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar"><div><span class="eyebrow">PHASE 5 DEMO / LIVE TRACE</span><h1>Positioning memo <span class="live-pill"><i></i> live</span></h1></div></header>
+      <section class="run-meta"><div><span class="mono">RUN-7F3A</span><span class="muted" id="runMeta">Started 09:42:18 · approval checkpoint pending</span></div></section>
+
+      <section class="request-card"><div class="request-icon">✦</div><div class="request-copy"><span class="eyebrow">ONE RUN / ALL SUBSYSTEMS</span><p>Research three competitors and draft a positioning memo for our new <em>agent observability platform</em>.</p><div class="request-tags"><span>Ordered plan</span><span>Memory reused</span><span>Reviewer rejected</span><span>Escalation pending</span></div></div></section>
+
+      <div class="content-grid">
+        <section class="execution-panel">
+          <div class="section-heading"><div><span class="eyebrow">EXECUTION PLAN</span><h2>Specialists at work</h2></div><span class="progress-label"><span id="progressText">4 of 7 steps</span><span class="progress-track"><i id="progressBar"></i></span></span></div>
+          <div class="action-toolbar"><button id="addAction">＋ Add action</button><button id="removeAction" disabled>− Remove selected</button><span id="actionHint">Select an action to edit the plan</span></div>
+          <div class="step-list" id="stepList"></div>
+          <div class="demo-evidence"><div><span class="eyebrow">DEMO CHECKPOINT</span><strong>All required proof points</strong></div><span class="evidence-ok">✓ decomposition</span><span class="evidence-ok">✓ specialist tools</span><span class="evidence-ok">✓ rejection + send-back</span><span class="evidence-ok">✓ memory changed plan</span><span class="evidence-wait">! escalation paused</span></div>
+        </section>
+
+        <aside class="trace-panel"><div class="trace-header"><div><span class="eyebrow">TRACE EXPLORER</span><h2>What’s happening</h2></div><span class="live-dot"><i></i> streaming</span></div><div class="trace-summary"><div><strong id="eventCount">12</strong><small>events</small></div><div><strong>$0.42</strong><small>estimated cost</small></div><div><strong>1.8s</strong><small>avg latency</small></div></div><div class="trace-stream" id="traceStream"></div><div class="trace-detail" id="traceDetail"><span class="eyebrow">SELECT AN EVENT</span><p>Click any event to inspect its node, action, and outcome.</p></div></aside>
+      </div>
+    </main>
+  </div>
+
+  <div class="approval-drawer" id="approvalDrawer"><div class="drawer-grip"></div><div class="drawer-head"><div><span class="eyebrow amber" id="approvalEyebrow">ACTION REQUIRED</span><h2 id="approvalTitle">Review escalation</h2></div><button id="closeDrawer">×</button></div><div class="risk-card"><span class="risk-icon">!</span><div><strong>Sensitive operation detected</strong><p>Researcher wants to call an external data source with a query containing an unreleased product name.</p></div></div><div class="approval-context"><span class="eyebrow">THE REQUEST</span><p>“Compare feature coverage and pricing for Relay, LangSmith, and AgentOps using current public sources.”</p><div class="context-row"><span>Triggered by</span><strong>Research specialist</strong></div><div class="context-row"><span>Recommended</span><strong class="amber-text">Approve once</strong></div></div><div class="drawer-actions"><button class="takeover" id="takeoverBtn">Take over</button><button class="approve" id="approveBtn">Approve operation <span>↗</span></button></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

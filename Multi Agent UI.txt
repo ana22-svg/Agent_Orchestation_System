@@ -1,0 +1,9 @@
+Multi Agent UI
+
+Strong demo for this one, building on the Phase 6 script the doc already sketches, but sharpened:
+
+Feed a realistic multi-step request live (not scripted-looking) — something like "research three competitors and draft a positioning memo."
+Let it run with the trace explorer open in a side panel the whole time, so tool calls and specialist handoffs are visible as they happen, not just at the end.
+Force a reviewer rejection naturally (pick a subtask where the specialist plausibly gets it wrong) — narrate the send-back.
+Trigger one real escalation (e.g., a sensitive-operation trigger) and actually act on it in the review UI — approve or take over.
+Close by replaying that same task with one input changed, showing the execution diverge in the trace explorer.
